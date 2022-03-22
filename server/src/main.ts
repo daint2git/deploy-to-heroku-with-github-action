@@ -5,8 +5,7 @@ const app = express();
 const port = process.env.PORT ?? 3000;
 
 app.get("/", (_, res) => {
-  const env = { ABC: process.env.ABC }
-  res.send("Hello World, env: " + JSON.stringify(env));
+  res.json(process.env);
 });
 
 app.listen(port, () => {
